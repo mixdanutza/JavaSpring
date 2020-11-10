@@ -16,7 +16,11 @@ public class Game implements IGame {
     private int remainingGuesses;
     private boolean validNumberRange = true;
 
-    public Game(NumberGenerator numberGenerator) {
+//    public Game(NumberGenerator numberGenerator) {
+//        this.numberGenerator = numberGenerator;
+//    }
+
+    public void setNumberGenerator(NumberGenerator numberGenerator){
         this.numberGenerator = numberGenerator;
     }
 
