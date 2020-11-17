@@ -17,6 +17,13 @@ public class Main {
         // Get NumberGenerator bean from context (container)
         NumberGenerator numberGenerator = context.getBean(NumberGenerator.class);
 
+        // Get MessageGenerator bean
+        MessageGenerator messageGenerator = context.getBean((MessageGenerator.class));
+
+        logger.info("getMainMessage = {}", messageGenerator.getMainMessage());
+        logger.info("getResultMessage = {}", messageGenerator.getResultMessage());
+
+
         // Call method next() to get a random number
         int number = numberGenerator.next();
 
