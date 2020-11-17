@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-@Component
 public class Game implements IGame {
 
     private static final Logger logger = LoggerFactory.getLogger(Game.class);
