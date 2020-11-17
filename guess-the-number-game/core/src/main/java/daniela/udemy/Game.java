@@ -2,11 +2,17 @@ package daniela.udemy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
+@Component
 public class Game implements IGame {
 
     private static final Logger logger = LoggerFactory.getLogger(Game.class);
 
+    @Autowired
     private NumberGenerator numberGenerator;
     private int guessCount = 10;
     private int number;
@@ -16,14 +22,7 @@ public class Game implements IGame {
     private int remainingGuesses;
     private boolean validNumberRange = true;
 
-//    public Game(NumberGenerator numberGenerator) {
-//        this.numberGenerator = numberGenerator;
-//    }
-
-    public void setNumberGenerator(NumberGenerator numberGenerator){
-        this.numberGenerator = numberGenerator;
-    }
-
+    @PostConstruct
     @Override
     public void reset() {
         smallest = 0;
